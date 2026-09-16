@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Job</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Add a Job</h1>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="title"
+                placeholder="Job Title"
+                required
+            >
+
+            <input
+                type="text"
+                name="company"
+                placeholder="Company"
+                required
+            >
+
+            <input
+                type="text"
+                name="location"
+                placeholder="Location"
+                required
+            >
+
+            <input
+                type="text"
+                name="salary"
+                placeholder="Salary"
+            >
+
+            <textarea
+                name="description"
+                placeholder="Job Description"
+                rows="6"
+            ></textarea>
+
+            <button type="submit">
+                Add Job
+            </button>
+
+        </form>
+
+        <a href="{{ url_for('home') }}">Back to Jobs</a>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Job</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Edit Job</h1>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="title"
+                placeholder="Job Title"
+                value="{{ job.title }}"
+                required
+            >
+
+            <input
+                type="text"
+                name="company"
+                placeholder="Company"
+                value="{{ job.company }}"
+                required
+            >
+
+            <input
+                type="text"
+                name="location"
+                placeholder="Location"
+                value="{{ job.location }}"
+                required
+            >
+
+            <input
+                type="text"
+                name="salary"
+                placeholder="Salary"
+                value="{{ job.salary or '' }}"
+            >
+
+            <textarea
+                name="description"
+                placeholder="Job Description"
+                rows="6"
+            >{{ job.description or '' }}</textarea>
+
+            <button type="submit">
+                Save Changes
+            </button>
+
+        </form>
+
+        <a href="{{ url_for('home') }}">Back to Jobs</a>
+
+    </div>
+
+</body>
+
+</html>
